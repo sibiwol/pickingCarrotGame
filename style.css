@@ -1,0 +1,154 @@
+:root {
+  /* font */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+
+  /* radius */
+  --border-radius: 12px;
+  --border-radius-circle: 50%;
+
+  /* Animation */
+  --animation-duration: 200ms;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+}
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  background: url(img/background.png) center/cover;
+  border-radius: var(--border-radius);
+
+  position: relative;
+}
+
+.game__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.game__field {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+}
+
+.game__button {
+  display: block;
+  width: 60px;
+  height: 60px;
+
+  background-color: teal;
+  border: 4px solid;
+  border-radius: var(--border-radius);
+
+  line-height: 60px;
+  font-size: var(--font-medium);
+  color: whitesmoke;
+
+  transition: var(--animation-duration) ease-in-out;
+}
+.game__button:hover {
+  transform: scale(1.1);
+}
+
+.game__timer {
+  visibility: hidden;
+  width: 100px;
+  margin-top: 8px;
+  padding: 8px;
+
+  text-align: center;
+  font-size: var(--font-medium);
+
+  border: 5px solid whitesmoke;
+  border-radius: 60px;
+  background-color: wheat;
+
+  user-select: none;
+  cursor: auto;
+}
+
+.game__score {
+  margin: 8px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: var(--font-medium);
+  border: 4px solid whitesmoke;
+  border-radius: var(--border-radius-circle);
+  background-color: wheat;
+
+  visibility: hidden;
+  user-select: none;
+  cursor: auto;
+}
+
+.bug,
+.carrot {
+  position: absolute;
+  cursor: pointer;
+  transition: var(--animation-duration) ease-in-out;
+}
+
+.bug:hover,
+.carrot:hover {
+  transform: scale(1.1);
+}
+
+/* pop__up */
+.pop-up {
+  display: block;
+
+  margin: auto;
+  width: 400px;
+  padding: 20px;
+
+  align-items: center;
+  text-align: center;
+
+  background-color: #00000080;
+  border: none;
+  border-radius: var(--border-radius);
+
+  transform: translateY(-160%);
+}
+
+.pop-up--hide {
+  display: none;
+}
+
+.pop-up__refresh {
+  width: 60px;
+  height: 60px;
+
+  color: whitesmoke;
+  font-size: var(--font-medium);
+
+  border-radius: var(--border-radius-circle);
+  background-color: teal;
+}
+.pop-up__message {
+  display: block;
+  color: white;
+  font-size: 38px;
+  margin-top: 12px;
+}
